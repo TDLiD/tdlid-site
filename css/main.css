@@ -29,11 +29,27 @@
 }
 
 /* Modal base */
-#compareModal, #quoteModal {
+#compareModal, #quoteModal, #newsModal {
     display: none;
     align-items: center;
     justify-content: center;
 }
+
+/* NEW: News Modal Scrollbar */
+/* Customize for Webkit browsers (Chrome, Safari) */
+#newsList::-webkit-scrollbar {
+    width: 8px;
+}
+#newsList::-webkit-scrollbar-track {
+    background: #0a0a0a;
+    border-radius: 10px;
+}
+#newsList::-webkit-scrollbar-thumb {
+    background: #0f172a; /* neutral-900 */
+    border-radius: 10px;
+    border: 2px solid #0a0a0a; /* Add border for inner color effect */
+}
+
 #compareModal.show, #quoteModal.show {
     display: flex;
 }
