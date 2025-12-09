@@ -22,6 +22,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        section {
+            scroll-margin-top: 100px;
+        }
+    </style>
+    
     <script type="application/ld+json">
     {
       "@context":"https://schema.org",
@@ -50,25 +56,49 @@
 <body class="bg-neutral-950 text-neutral-100 font-[Pretendard]">
 
 <header class="fixed top-0 left-0 w-full z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        
-        <h1 class="flex items-center gap-3 text-xl font-bold tracking-wide"> 
-            <img src="images/logo.png" alt="TDL Energy Logo" class="header-logo object-contain"> 
-            <span class="animated-logo-text">TDL ENERGY INDONESIA</span>
-        </h1>
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
+    <!-- LOGO -->
+    <h1 class="flex items-center gap-3 text-xl font-bold tracking-wide">
+        <img src="images/logo.png" alt="TDL Energy Logo" class="header-logo object-contain"> 
+        <span class="animated-logo-text">TDL ENERGY INDONESIA</span>
+    </h1>
 
-        <nav class="hidden md:flex gap-8 text-sm text-neutral-300">
-            <a href="#about" class="hover:text-white">About</a>
-            <a href="#products" class="hover:text-white">Products</a>
-            <a href="#technology" class="hover:text-white">Technology</a>
-            <a href="#solution" class="hover:text-white">Solution</a>
-            <a href="news.html" class="hover:text-white" id="navNewsLink">News</a>
-            <a href="#contact" class="hover:text-white">Contact</a>
-        </nav>
-        <button id="mobileMenuBtn" class="md:hidden">☰</button>
-    </div>
+    <!-- DESKTOP MENU -->
+    <nav class="hidden md:flex items-center gap-10 text-sm text-neutral-300">
+
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#solution" class="nav-link">Solutions</a>
+        <a href="#technology" class="nav-link">Technology</a>
+
+        <!-- Resources Dropdown -->
+        <div class="relative group">
+            <button class="nav-link flex items-center gap-1">
+                Resources
+                <span class="text-xs">▼</span>
+            </button>
+
+            <div class="absolute hidden group-hover:block top-full left-0 mt-2 w-52 bg-neutral-900/95 backdrop-blur border border-neutral-800 rounded-xl shadow-xl p-3 space-y-2">
+                <a href="news.html" class="block hover:text-cyan-400">News</a>
+                <a href="#" class="block hover:text-cyan-400">Whitepapers</a>
+                <a href="#" class="block hover:text-cyan-400">Downloads</a>
+            </div>
+        </div>
+
+        <a href="#about" class="nav-link">Company</a>
+
+        <!-- CTA -->
+        <a href="#contact" class="ml-4 px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold">
+            Request Quote
+        </a>
+    </nav>
+
+    <!-- Mobile Button -->
+    <button id="mobileMenuBtn" class="md:hidden text-2xl">☰</button>
+
+  </div>
 </header>
+
 
 <div id="stickyCTABar" class="hidden md:flex items-center justify-between gap-4 fixed bottom-6 left-6 right-6 z-60 p-3 rounded-full bg-black/50 backdrop-blur border border-neutral-800 shadow-lg">
     <div class="flex items-center gap-3">
@@ -83,6 +113,8 @@
         <a href="mailto:sales@tdlenergy.example" class="px-4 py-2 rounded-xl border border-neutral-700">Email Sales</a>
     </div>
 </div>
+
+
 
 <section class="hero-section px-6">
     <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/hero-poster.jpg">
@@ -125,7 +157,6 @@
     <div class="max-w-7xl mx-auto text-center">
         <h3 class="text-1xl font-bold mb-6">Trusted by fleets & partners</h3>
         <div class="flex flex-wrap items-center justify-center gap-8">            
-             <img src="images/battery1.png" alt="Client 1" class="h-12" loading="lazy">
 
             <img src="images/DAVIGO.png" alt="Client 1" class="h-12" loading="lazy">
             <img src="images/GESITS.png" alt="Client 2" class="h-12" loading="lazy">
@@ -194,6 +225,7 @@
     <div class="max-w-6xl mx-auto">
         <h3 class="text-3xl font-bold mb-10">Custom Solutions</h3>
         <div class="grid md:grid-cols-3 gap-10">
+           
             <div class="p-8 border border-neutral-800 rounded-2xl">
                 <a href="#" id="openSolutionDetail" data-detail-src="images/solution1_detail.png">
                     <img 
@@ -203,17 +235,38 @@
                         loading="lazy"
                     >
                 </a>
-                <h4 class="font-semibold mb-4">TDLID offers...</h4>
-                <p class="text-neutral-400">leasing and rental financing solutions to accelerate the adoption of electricmotorcycles.</p>
+                <h4 class="font-semibold mb-4">Financing & Leasing</h4>
+                <p class="text-neutral-400">TDLiD offers leasing and rental financing solutions to accelerate the adoption of electric motorcycles for commercial fleets.</p>
             </div>
+
             <div class="p-8 border border-neutral-800 rounded-2xl">
-                <h4 class="font-semibold mb-4">OEM Integration</h4>
-                <p class="text-neutral-400">Seamless integration with vehicle controllers and charging systems for motorcycle manufacturers.</p>
+                <a href="#" data-detail-src="images/solution2_detail.png">
+                    <img 
+                        src="images/solution2.png" 
+                        alt="Battery Recycling Solution" 
+                        class="w-full h-auto mb-4 rounded-lg hover:opacity-80 transition-opacity cursor-pointer" 
+                        loading="lazy"
+                    >
+                </a>
+                <h4 class="font-semibold mb-4">Battery Recycling</h4>
+                <p class="text-neutral-400">TDLiD contributes to building a virtuous cycle ecosystem for raw materials of Indonesian nickel and recycled batteries, while providing a business model that can achieve true zero carbon in the electric motorcycle ecosystem.
+</p>
             </div>
+
             <div class="p-8 border border-neutral-800 rounded-2xl">
-                <h4 class="font-semibold mb-4">Racing Applications</h4>
-                <p class="text-neutral-400">Lightweight, high-power density packs for competitive electric racing bikes.</p>
+                <a href="#" data-detail-src="images/solution1_detail.png">
+                    <img 
+                        src="images/solution1.png" 
+                        alt="B2B Custom Pack" 
+                        class="w-full h-auto mb-4 rounded-lg hover:opacity-80 transition-opacity cursor-pointer" 
+                        loading="lazy"
+                    >
+                </a>
+                <h4 class="font-semibold mb-4">B2B Custom Pack & Design</h4>
+                <p class="text-neutral-400">Customized battery pack design and manufacturing for OEM and B2B partners, optimized for specific motorcycle models and performance requirements.</p>
             </div>
+
+
         </div>
     </div>
 </section>
@@ -239,6 +292,33 @@
 
     </div>
 </section>
+
+<!-- Mobile Fullscreen Menu -->
+<div id="mobileMenu" class="fixed inset-0 z-[9999] hidden bg-black/95 text-white">
+    <div class="flex justify-between items-center px-6 py-5 border-b border-neutral-800">
+        <div class="text-lg font-bold">Menu</div>
+        <button id="mobileMenuClose" class="text-3xl">&times;</button>
+    </div>
+
+    <nav class="flex flex-col p-6 space-y-6 text-xl">
+        <a href="#products" class="mobile-nav">Products</a>
+        <a href="#solution" class="mobile-nav">Solutions</a>
+        <a href="#technology" class="mobile-nav">Technology</a>
+        <a href="#about" class="mobile-nav">Company</a>
+
+        <div class="mt-6 pt-6 border-t border-neutral-800 text-base space-y-3">
+            <a href="news.html" class="block text-neutral-300">News</a>
+            <a href="#" class="block text-neutral-300">Whitepapers</a>
+            <a href="#" class="block text-neutral-300">Downloads</a>
+        </div>
+
+        <a href="#contact" class="mt-10 text-center bg-cyan-500 text-black py-3 rounded-xl font-bold">
+            Request Quote
+        </a>
+    </nav>
+</div>
+
+
 
 <footer class="py-10 px-6 text-center text-neutral-500 border-t border-neutral-800">
     © 2025 TDL Energy Indonesia. All rights reserved.
@@ -289,8 +369,10 @@
     document.addEventListener('DOMContentLoaded', () => {
         // 기존 'Technology' 섹션의 배터리 이미지 버튼
         const openBatteryBtn = document.getElementById('openBatteryDetail'); 
-        // 🌟 [추가된 부분]: 'Solution' 섹션의 새 이미지 버튼
-        const openSolutionBtn = document.getElementById('openSolutionDetail'); 
+        
+        // 🌟 수정된 부분: 'Solution' 섹션 내의 data-detail-src 속성을 가진 모든 링크를 선택
+        // 이렇게 하면 모든 솔루션 항목에 이벤트가 바인딩됩니다.
+        const solutionLinks = document.querySelectorAll('#solution a[data-detail-src]'); 
 
         const modal = document.getElementById('imageModal');
         const closeBtn = document.getElementById('closeImageModal');
@@ -306,14 +388,15 @@
             modal.classList.add('show');
         };
         
-        // 🌟 [수정된 부분]: 두 버튼 모두에 이벤트 리스너 연결
+        // 'Technology' 버튼에 이벤트 리스너 연결
         if (openBatteryBtn) {
             openBatteryBtn.addEventListener('click', openModalHandler);
         }
 
-        if (openSolutionBtn) {
-            openSolutionBtn.addEventListener('click', openModalHandler);
-        }
+        // 🌟 수정된 부분: solutionLinks 컬렉션의 모든 요소에 이벤트 리스너 연결
+        solutionLinks.forEach(link => {
+            link.addEventListener('click', openModalHandler);
+        });
         
         const closeModal = () => {
             modal.classList.add('hidden');

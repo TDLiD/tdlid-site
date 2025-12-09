@@ -533,6 +533,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// ===== Mobile Menu Logic =====
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const menuBox = document.getElementById('mobileMenu');
+    const menuClose = document.getElementById('mobileMenuClose');
+
+    if(menuBtn && menuBox && menuClose){
+        menuBtn.addEventListener('click', () => {
+            menuBox.classList.remove('hidden');
+        });
+
+        menuClose.addEventListener('click', () => {
+            menuBox.classList.add('hidden');
+        });
+
+        // Close on link click
+        document.querySelectorAll('.mobile-nav').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBox.classList.add('hidden');
+            });
+        });
+    }
+});
+
+
 
 /* expose */
 window.__NG = window.__NG || {};
