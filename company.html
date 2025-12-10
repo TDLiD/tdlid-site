@@ -2,15 +2,24 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Company — TDL Energy Indonesia</title>
+    <title>Company Profile | TDL Energy Indonesia</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/main.css"> <style>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        /* 🌟 로고 크기 통일화를 위한 :root 변수 (유지) 🌟 */
+        :root {
+            --header-logo-font-size: 8.2rem;       /* 상단 TDLiD 크기 */
+            --header-logo-font-weight: 900;        /* 상단 TDLiD 두께 */
+            --header-subtitle-font-size: 1.50rem;  /* "TDL ENERGY INDONESIA" 크기 */
+            --header-subtitle-font-weight: 800;    /* 두께 */
+        }
+
         body {
             background:#020617;
             color:#e5e7eb;
-            /* news.html과 동일한 폰트 적용을 위해 main.css에 Pretendard가 정의되어 있다고 가정 */
             font-family: 'Pretendard', sans-serif; 
         }
 
@@ -26,44 +35,40 @@
         }
 
         /* 3 Image Stage */
-.image-stage {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.image-card {
-    position: relative;
-    border-radius: 1.5rem;
-    overflow: visible;    /* 🔥 가장 중요 */
-    border: 1px solid rgba(255,255,255,.08);
-    background: #020617;
-    cursor: pointer;
-    display: flex;
-    align-items: center;      /* 세로 중앙 */
-    justify-content: center;  /* 가로 중앙 */
-}
-
-.image-card img {
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    display: block;
-    transition: transform 0.6s ease;
-    transform-origin: center center;
-    position: relative;
-    z-index: 1;
-    border-radius: 1.5rem;  /* ✅ 추가 */
-}
-
-/* hover 시 진짜 원본 사이즈로 확장 */
-.image-card.hover-expand:hover img {
-    transform: scale(1.6);       /* "원본 크기처럼" 풀어줌 */
-    z-index: 99;
-}
-
+        .image-stage {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .image-card {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: visible;
+            border: 1px solid rgba(255,255,255,.08);
+            background: #020617;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-card img {
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+            transform-origin: center center;
+            position: relative;
+            z-index: 1;
+            border-radius: 1.5rem;
+        }
+        /* hover 시 진짜 원본 사이즈로 확장 */
+        .image-card.hover-expand:hover img {
+            transform: scale(1.6);
+            z-index: 99;
+        }
 
         .image-overlay{
             position:absolute;
@@ -84,57 +89,45 @@
             from {opacity:0;transform:translateY(50px)}
             to {opacity:1;transform:translateY(0)}
         }
-
-        /* 뉴스/인덱스 페이지의 로고 디자인을 모방하기 위한 스타일 (main.css에 로고 관련 클래스가 정의되어 있다고 가정) */
-        .header-logo-container {
-            display: flex;
-            align-items: center; /* 세로 중앙 정렬 */
-            gap: 12px;
-        }
-        .header-logo-text {
-            /* news.html의 'TDLiD NO MORE CARBON' 이미지 로고 부분 */
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        /* news.html의 'TDL ENERGY INDONESIA' 텍스트를 위한 스타일 */
-        .header-nav-text {
-            font-size: 1.1rem; /* news.html의 글자 크기를 모방 */
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #e5e7eb;
-            text-transform: uppercase;
-        }
-        
     </style>
 </head>
 
-<body class="relative">
+<body class="relative"> 
 
 <header class="fixed top-0 left-0 w-full z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"> 
-        <h1 class="header-logo-container"> 
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"> 
+        <h1 class="flex items-center gap-3 text-xl font-bold tracking-wide"> 
             <img src="images/logo.png" alt="TDLiD Logo" class="header-logo object-contain">
-            
-            <span class="header-nav-text">TDL ENERGY INDONESIA</span>
-            </h1>
+            <span class="animated-logo-text">TDL ENERGY INDONESIA</span>
+        </h1>
 
-<nav class="hidden md:flex items-center gap-10 text-sm text-neutral-300">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="index.html#products" class="nav-link">Products</a>
-    <a href="index.html#technology" class="nav-link">Technology</a>
-    <a href="index.html#solution" class="nav-link">Solutions</a>
-    <a href="company.html" class="nav-link text-white font-bold">Company</a>
-    <a href="news.html" class="nav-link">News</a>
-    <a href="index.html#contact" class="ml-4 px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold">
-        Request Quote
-    </a>
-</nav>
-
+        <nav class="hidden md:flex items-center gap-10 text-sm text-neutral-300">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#products" class="nav-link">Products</a>
+            <a href="index.html#technology" class="nav-link">Technology</a>
+            <a href="index.html#solution" class="nav-link">Solutions</a>
+            <a href="company.html" class="nav-link text-white font-bold">Company</a> 
+            <a href="news.html" class="nav-link">News</a>
+            <a href="index.html#contact" class="ml-4 px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold">
+                Request Quote
+            </a>
+        </nav>
+        
+        <button id="mobileMenuBtn" class="md:hidden">☰</button>
+    </div>
+    
+    <div id="mobileMenu" class="hidden md:hidden fixed top-16 right-6 bg-neutral-900 p-6 rounded-2xl shadow-xl border border-neutral-800 z-50 flex-col gap-4 text-white text-base">
+        <a href="index.html" class="nav-link-mobile">Home</a>
+        <a href="index.html#products" class="nav-link-mobile">Products</a>
+        <a href="index.html#technology" class="nav-link-mobile">Technology</a>
+        <a href="index.html#solution" class="nav-link-mobile">Solutions</a>
+        <a href="company.html" class="nav-link-mobile text-cyan-500 font-bold">Company</a>
+        <a href="news.html" class="nav-link-mobile">News</a>
+        <a href="index.html#contact" class="nav-link-mobile mt-2 px-5 py-2 rounded-xl bg-cyan-500 text-black font-semibold text-center">
+            Request Quote
+        </a>
     </div>
 </header>
-
 <main class="relative z-10 pt-32 pb-24 max-w-7xl mx-auto px-6">
     <div class="company-bg"></div>
 
@@ -148,21 +141,17 @@
     </div>
 
 <section class="mb-32">
-  <div class="image-stage">
-
-    <div class="image-card hover-expand">
-      <img src="images/company1.png" alt="">
+    <div class="image-stage">
+        <div class="image-card hover-expand">
+            <img src="images/company1.png" alt="">
+        </div>
+        <div class="image-card hover-expand">
+            <img src="images/company2.png" alt="">
+        </div>
+        <div class="image-card hover-expand">
+            <img src="images/company3.png" alt="">
+        </div>
     </div>
-
-    <div class="image-card hover-expand">
-      <img src="images/company2.png" alt="">
-    </div>
-
-    <div class="image-card hover-expand">
-      <img src="images/company3.png" alt="">
-    </div>
-
-  </div>
 </section>
 
 
@@ -171,7 +160,7 @@
         <div class="float-in">
             <h2 class="text-4xl font-bold text-cyan-400 mb-6">Who We Are</h2>
             <p>
-                <b>TDL Energy Indonesia</b>is an Indonesian corporation established by Enchem Group, 
+                <b>TDL Energy Indonesia</b>is an Indonesian corporation established by Enchem Group, 
 with the objective of providing electric motorcycle services and
 renewable energy-related businesses in Indonesia.
             </p>
@@ -182,7 +171,7 @@ renewable energy-related businesses in Indonesia.
             <div class="p-8 rounded-2xl border border-neutral-800 bg-neutral-900/60 hover:border-cyan-400/40 transition">
                 <h3 class="text-xl font-bold text-cyan-300 mb-4">MISSION</h3>
                 <p class="text-neutral-300">
-                    “NO MORE CARBON”  
+                    “NO MORE CARBON”  
                     Deliver the best products and services to our customers.<br>Promote leadership consistently.<br>Create and Innovate value
 
                 </p>
@@ -209,7 +198,7 @@ renewable energy-related businesses in Indonesia.
 </main>
 
 <div id="cursor-layer">
-    <div id="cursor-spot"></div>
+    <div id="cursor-spot"></div>
 </div>
 
 <script src="main.js"></script>
